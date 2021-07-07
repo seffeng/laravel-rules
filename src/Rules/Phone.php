@@ -6,6 +6,7 @@
 namespace Seffeng\LaravelRules\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
+use Seffeng\Rules\Phone as PhoneRule;
 
 /**
  * 手机号验证
@@ -18,19 +19,7 @@ class Phone implements Rule
      *
      * @var string
      */
-    protected $regex = '/^1\d{10}$/';
-
-    /**
-     * Create a new rule instance.
-     *
-     * @return void
-     */
-    public function __construct(string $regex = null)
-    {
-        if (!is_null($regex)) {
-            $this->regex = $regex;
-        }
-    }
+    protected $regex;
 
     /**
      * Determine if the validation rule passes.
@@ -41,11 +30,7 @@ class Phone implements Rule
      */
     public function passes($attribute, $value)
     {
-        //
-        if (is_numeric($value)) {
-            return boolval(preg_match($this->regex, $value));
-        }
-        return false;
+        return (new PhoneRule($this->regex))->passes($value);
     }
 
     /**

@@ -18,7 +18,8 @@
     ],
     "require" : {
         "php" : ">=5.6",
-        "illuminate/contracts": ">=5.0"
+        "illuminate/contracts": ">=5.0",
+        "seffeng/rules": ">=0.1"
     },
     "autoload" : {
         "psr-4" : {
