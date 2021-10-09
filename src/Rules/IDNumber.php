@@ -22,6 +22,12 @@ class IDNumber implements Rule
     protected $regex;
 
     /**
+     * 是否检测地区（前6位）
+     * @var boolean
+     */
+    protected $isStrict = true;
+
+    /**
      * Determine if the validation rule passes.
      *
      * @param  string  $attribute
@@ -30,7 +36,9 @@ class IDNumber implements Rule
      */
     public function passes($attribute, $value)
     {
-        return (new IDNumberRule($this->regex))->passes($value);
+        $rule = (new IDNumberRule($this->regex));
+        $rule->setIsStrict($this->isStrict);
+        return $rule->passes($value);
     }
 
     /**
