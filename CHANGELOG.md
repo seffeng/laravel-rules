@@ -2,8 +2,7 @@
 
 * 2022-04-29
 
-  * 增加密码验证等级
-  - 参考 [rules](https://github.com/seffeng/php-rules/blob/HEAD/CHANGELOG.md)
+  * 增加密码验证等级，参考 [rules](https://github.com/seffeng/php-rules/blob/HEAD/CHANGELOG.md)
   
 * 2021-07-01
 
