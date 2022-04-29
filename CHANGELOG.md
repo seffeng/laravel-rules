@@ -1,5 +1,10 @@
 ### 更新日志
 
+* 2022-04-29
+
+  * 增加密码验证等级
+  - 参考 [rules](https://github.com/seffeng/php-rules/blob/HEAD/CHANGELOG.md)
+  
 * 2021-07-01
 
   * 增加身份证号码验证规则
