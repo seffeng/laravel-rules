@@ -31,7 +31,13 @@ class IDNumber implements Rule
      * 是否检测地区（前6位）
      * @var boolean
      */
-    protected $isStrict = true;
+    protected $isStrict = false;
+
+    /**
+     * 是否显示地区
+     * @var boolean
+     */
+    protected $isLocation = false;
 
     /**
      *
@@ -50,6 +56,7 @@ class IDNumber implements Rule
     {
         $this->validator = (new IDNumberRule($this->regex));
         $this->getValidator()->setIsStrict($this->isStrict);
+        $this->getValidator()->setIsLocation($this->isLocation);
         return $this->getValidator()->passes($value);
     }
 
